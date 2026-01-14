@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>givemeamemory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Fahkwang:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Noto Sans SC"', 'system-ui', 'sans-serif'],
+              fahkwang: ['Fahkwang', 'sans-serif'],
+            },
+            colors: {
+              border: '#d1d5db',
+              textMain: '#111111',
+              textMuted: '#4b5563',
+              oceanDeep: '#1d3557',
+              oceanLight: '#f0f9ff',
+              accentGreen: '#10b981',
+            },
+            maxWidth: {
+              container: '980px',
+            },
+            animation: {
+              'fade-in': 'fadeIn 1.2s ease-out forwards',
+              'slide-up': 'slideUp 1s ease-out forwards',
+              'pulse-slow': 'pulseSlow 3s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              pulseSlow: {
+                '0%, 100%': { opacity: '0.4' },
+                '50%': { opacity: '1' },
+              }
+            }
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: 'Noto Sans SC', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        color: #111111;
+        line-height: 1.6;
+        font-size: 15px;
+        background-color: #f0f7ff;
+        background-image: 
+          radial-gradient(at 0% 0%, hsla(210,100%,98%,1) 0, transparent 50%), 
+          radial-gradient(at 100% 100%, hsla(190,100%,95%,1) 0, transparent 50%),
+          url('https://www.transparenttextures.com/patterns/pinstripe-light.png');
+        background-attachment: fixed;
+      }
+      .container-980 {
+        max-width: 980px;
+        margin: 0 auto;
+        position: relative;
+      }
+      .page-frame-right {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: rgba(0, 0, 0, 0.04);
+        z-index: 40;
+        pointer-events: none;
+      }
+      .page-frame-right { right: 60px; }
+      
+      @media (max-width: 1400px) {
+        .page-frame-right { right: 20px; }
+      }
+      @media (max-width: 1024px) {
+        .page-frame-right { display: none; }
+      }
+      
+      .writing-mode-vertical {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+      }
+
+      .frosted-minimal {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      
+      h1, h2, h3, h4 {
+        font-family: 'Fahkwang', sans-serif;
+        font-weight: 300;
+      }
+
+      .text-hero-shadow {
+        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      }
+
+      /* MDX / 项目文章内容区域图片排版 */
+      .mdx-content img {
+        display: block;
+        max-width: 100%;
+        height: auto;           /* 按原始比例缩放 */
+        margin: 1.5rem auto;    /* 上下留白，居中 */
+      }
+
+      .mdx-content p {
+        margin: 1rem 0;
+      }
+
+      .mdx-content .grid {
+        width: 100%;
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+      }
+    }
+    </script>
+</head>
+  <body>
+    <!-- Left frame removed to accommodate ProgressAxis component -->
+    <div class="page-frame-right"></div>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
