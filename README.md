@@ -1,7 +1,7 @@
 
-# Iseegreenray Blog Module
+# givemeamemory Blog Module
 
-A high-fidelity blog module built with React, TypeScript, and Tailwind CSS. This project emulates the clean, minimalist aesthetic of the "iseegreenray" Wix site with pixel-perfect accuracy.
+A high-fidelity blog module built with React, TypeScript, and Tailwind CSS. This project emulates the clean, minimalist aesthetic of the "givemeamemory" Wix site with pixel-perfect accuracy.
 
 ## Features
 
